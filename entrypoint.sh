@@ -12,5 +12,9 @@
 
 
 npm install
+npm install --save @frctl/fractal
+npm install --save @frctl/twig
+npm install --save-dev gulp
+npm install --save-dev gulp-sass
 
 fractal start sync
