@@ -1,0 +1,16 @@
+Test Page
+Blablablub
+{% include '../components/atoms/button/button.twig' %}
+
+{% include '@atoms-button' with button only %}
+{% include '@atoms-button' with button only %}
+{% include '@atoms-button' with button only %}
+{% include '@atoms-button' with button only %}
+{% include '@atoms-button' with button only %}
+{% include '@atoms-button' with button only %}
+{% include '@atoms-button' with button only %}
+{% include '@atoms-button' with button only %}
+{% include '@atoms-button' with button only %}
+{% include '@atoms-button' with button|merge({"content": "test"}) only %}
+
+{{ content }}

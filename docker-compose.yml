@@ -1,0 +1,14 @@
+version: '2'
+services:
+  fractal:
+    build: 
+      context: .
+    container_name: "${PROJECT_NAME}_fractal"
+    env_file:
+      - .env
+    ports:
+      - "3000:3000"
+      - "3002:3002"
+    volumes:
+      - ./themes/default:/var/www/project
+#      - /var/www/project/node_modules

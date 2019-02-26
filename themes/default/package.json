@@ -1,0 +1,8 @@
+{
+  "name": "unitb-frontend",
+  "version": "0.1.0",
+  "dependencies": {
+    "@frctl/fractal": "^1.1.7",
+    "faker": "^4.1.0"
+  }
+}
