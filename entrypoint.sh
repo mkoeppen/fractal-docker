@@ -10,11 +10,38 @@
 
 # npm set progress=false
 
+cd /var/www/project
 
-npm install
-npm install --save @frctl/fractal
-npm install --save @frctl/twig
-npm install --save-dev gulp
-npm install --save-dev gulp-sass
+npm cache clean -f
+
+echo "////////////////////////////////////"
+echo "// global packages"
+echo "////////////////////////////////////"
+npm install --global npm@latest
+npm install --global gulp-cli
+npm install --global @frctl/fractal
+
+echo "////////////////////////////////////"
+echo "// npm install"
+echo "////////////////////////////////////"
+
+npm install --no-bin-links
+
+echo "////////////////////////////////////"
+echo "// fractal"
+echo "////////////////////////////////////"
+npm install --save @frctl/fractal --no-bin-links
+
+echo "////////////////////////////////////"
+echo "// twig"
+echo "////////////////////////////////////"
+npm install --save @frctl/twig --no-bin-links
+
+echo "////////////////////////////////////"
+echo "// gulp install"
+echo "////////////////////////////////////"
+
+npm install --save-dev gulp --no-bin-links
+npm install --save-dev gulp-sass --no-bin-links
 
 fractal start sync
