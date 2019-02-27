@@ -11,4 +11,4 @@ services:
       - "3002:3002"
     volumes:
       - ./themes/default:/var/www/project
-#      - /var/www/project/node_modules
+      - /var/www/project/node_modules

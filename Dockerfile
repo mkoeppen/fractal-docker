@@ -1,42 +1,26 @@
 FROM node:10-alpine
 
-
+## INSTALL PACKAGES
+RUN apk update
 RUN apk add dos2unix
 
+## INIT
 COPY ./entrypoint.sh /entrypoint.sh
 VOLUME ["/var/www/project"]
-
-
 WORKDIR /var/www/project
 
-
+## CONVERT LINE ENDINGS FOR WINDOWS
 RUN dos2unix /entrypoint.sh
-#RUN dos2unix entrypoint.sh && apt-get --purge remove -y dos2unix && rm -rf /var/lib/apt/lists/* 
 
+## CLEAN IMAGE
+RUN apk del dos2unix
+RUN rm -rf /var/cache/apk/* && \
+    rm -rf /tmp/*
 
-#RUN npm install -g npm@latest
-#
-#RUN npm install --global gulp-cli
-#RUN npm install --global @frctl/fractal
-#RUN npm install
-#RUN npm install --save @frctl/fractal
-#RUN npm install --save @frctl/twig
-
-#RUN npm install --save-dev gulp
-#RUN npm install --save-dev gulp-sass
-
-# ENV PATH /opt/project/fractal/node_modules/.bin:$PATH
-
-# RUN chown -R node:node /opt/project
-
-# Expose 3000 for the node.js server, 3002 for the BrowserSync
+## SET PORTS
 EXPOSE 3000 3002
 
-
-#CMD ["fractal", "start", "sync"]
-
-#CMD while true; do sleep 1000; done;
-
+## SET ENTRYPOINT
 ENTRYPOINT ["/entrypoint.sh"]
 
 
