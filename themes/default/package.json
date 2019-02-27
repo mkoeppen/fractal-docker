@@ -1,8 +1,14 @@
 {
-  "name": "unitb-frontend",
+  "name": "fractal-project",
   "version": "0.1.0",
+  "description": "fractal project description",
   "dependencies": {
     "@frctl/fractal": "^1.1.7",
+    "@frctl/twig": "^1.0.0-beta.5",
     "faker": "^4.1.0"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-sass": "^4.0.2"
   }
 }
