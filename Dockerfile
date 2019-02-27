@@ -22,9 +22,3 @@ EXPOSE 3000 3002
 
 ## SET ENTRYPOINT
 ENTRYPOINT ["/entrypoint.sh"]
-
-
-## https://stackoverflow.com/questions/29181032/add-a-volume-to-docker-but-exclude-a-sub-folder
-
-
-# show config result: docker-compose config
